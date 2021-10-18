@@ -1,6 +1,9 @@
 ### Get protoc installed. Follow google instructions.
 ### ... also brew works as well
 
+## To Compile protobuf files
+- `protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative usermgmt/usermgmt.proto`
+
 ## To Run Server
 - `go run usermgmt_server/usermgmt_server.go`
 - `enter`
