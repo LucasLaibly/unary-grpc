@@ -5,8 +5,6 @@
 - `go run usermgmt_server/usermgmt_server.go`
 - `enter`
 
-~~~ open another terminal ~~
-
 ## To Run Client
 - `go run usermgmt_client/usermgmt_client.go`
 - `enter` 
