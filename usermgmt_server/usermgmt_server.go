@@ -26,7 +26,7 @@ func (server *UserManagementServer) Run() error {
 	lis, err := net.Listen("tcp", port)
 
 	if err != nil {
-		log.Fatal("Failed to listen: %v", err)
+		log.Fatalf("Failed to listen: %v", err)
 	}
 
 	// Make a new server
@@ -71,7 +71,7 @@ func (s *UserManagementServer) CreateNewUser(ctx context.Context, in *pb.NewUser
 
 			return created_user, nil
 		} else {
-			log.Fatal("Error reading file: %v", err)
+			log.Fatalf("Error reading file: %v", err)
 		}
 	}
 
