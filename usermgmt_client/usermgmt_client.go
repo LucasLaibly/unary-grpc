@@ -16,7 +16,7 @@ const (
 func main() {
 	conn, err := grpc.Dial(address, grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
-		log.Fatal("Did not connect: %v", err)
+		log.Fatalf("Did not connect: %v", err)
 	}
 	defer conn.Close()
 
@@ -33,7 +33,7 @@ func main() {
 		// r is response from server
 		r, err := c.CreateNewUser(ctx, &pb.NewUser{Name: name, Age: age})
 		if err != nil {
-			log.Fatal("Could not create new user: %v", err)
+			log.Fatalf("Could not create new user: %v", err)
 		}
 
 		log.Printf(`User Details:

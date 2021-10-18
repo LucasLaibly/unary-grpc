@@ -24,7 +24,7 @@ func (server *UserManagementServer) Run() error {
 	lis, err := net.Listen("tcp", port)
 
 	if err != nil {
-		log.Fatal("Failed to listen: %v", err)
+		log.Fatalf("Failed to listen: %v", err)
 	}
 
 	// Make a new server
