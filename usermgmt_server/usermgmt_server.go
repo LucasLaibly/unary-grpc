@@ -38,7 +38,7 @@ func main() {
 	lis, err := net.Listen("tcp", port)
 
 	if err != nil {
-		log.Fatal("Failed to listen: %v", err)
+		log.Fatalf("Failed to listen: %v", err)
 	}
 
 	// Make a new server
@@ -49,6 +49,6 @@ func main() {
 	log.Printf("Server Listening at %v", lis.Addr())
 
 	if err := s.Serve(lis); err != nil {
-		log.Fatal("Failed to server: %v", err)
+		log.Fatalf("Failed to server: %v", err)
 	}
 }
