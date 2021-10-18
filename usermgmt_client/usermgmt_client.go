@@ -41,4 +41,13 @@ NAME: %s
 AGE: %d
 ID: %d`, r.GetName(), r.GetAge(), r.GetId())
 	}
+
+	params := &pb.GetUsersParams{}
+	r, err := c.GetUsers(ctx, params)
+	if err != nil {
+		log.Fatalf("Could not retrieve users: %v", err)
+	}
+
+	log.Print("\nUSER LIST: \n")
+	log.Printf("r.GetUsers(): %v\n", r.GetUsers()) // return array of users stored in the User Management Server struct
 }
