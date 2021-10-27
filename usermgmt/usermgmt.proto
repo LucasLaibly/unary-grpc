@@ -8,6 +8,10 @@ service UserManagement {
     // Single service method
     // Create new user
     rpc CreateNewUser (NewUser) returns (User) {}
+
+    // GetUserParams : empty message, return a list of all - however, future iterations may want params (regex pattern)
+    //                 BACKWARDS COMPATABILITY
+    rpc GetUsers (GetUsersParams) returns (UserList) {}
  }
 
  message NewUser {
@@ -19,4 +23,13 @@ service UserManagement {
      string name = 1;
      int32  age  = 2;
      int32  id   = 3; // generate random id
+ }
+
+ message GetUsersParams {
+
+ }
+
+ message UserList {
+     // repeated : return list of something inside a proto message (int, string, objects, etc.)
+     repeated User users = 1;
  }
